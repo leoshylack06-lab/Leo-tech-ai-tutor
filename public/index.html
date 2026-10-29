@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="LEO TECH — a personal AI tutor for programming learners. Learn concepts, practice, and build real projects.">
+  <title>LEO TECH — Learn. Build. Evolve.</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="LEO TECH home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>LEO<span class="brand-accent">TECH</span><small>LEARN. BUILD. EVOLVE.</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#tutor">AI Tutor</a><a href="#paths">Learning paths</a><a href="#how">How it works</a>
+    </nav>
+    <a class="top-cta" href="#tutor">Start learning <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR PERSONAL LEARNING INTELLIGENCE</div>
+        <h1>Turn curiosity<br>into <span class="gradient-text">capability.</span></h1>
+        <p class="hero-lede">A smarter way to learn programming. Understand the why, practice the how, and build something real — one concept at a time.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#tutor">Explore the AI tutor <span>→</span></a>
+          <a class="text-link" href="#paths">Explore learning paths <span>↓</span></a>
+        </div>
+        <div class="hero-proof"><div class="avatar-stack"><i>L</i><i>{ }</i><i>λ</i></div><span>Built for curious minds.<br><b>Free learning starts here.</b></span></div>
+      </div>
+      <div class="hero-visual" aria-label="Decorative futuristic learning interface">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="core-glow"></div>
+        <div class="core-card">
+          <div class="core-top"><span class="status-dot"></span> LEO INTELLIGENCE <span class="tiny-code">v0.1</span></div>
+          <div class="core-symbol"><span>LEO</span><b>AI</b></div>
+          <div class="core-line"></div>
+          <p>Knowledge is not memorized.<br><strong>It is understood.</strong></p>
+          <div class="core-bottom"><span>LEARNING ENGINE</span><span class="equalizer"><i></i><i></i><i></i><i></i><i></i></span></div>
+        </div>
+        <div class="float-chip chip-code"><span class="chip-icon">{ }</span><span><b>Code, clearly.</b><small>Step-by-step lessons</small></span></div>
+        <div class="float-chip chip-progress"><span class="progress-ring">72%</span><span><b>Keep evolving</b><small>Every concept counts</small></span></div>
+        <div class="visual-grid"></div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Platform principles">
+      <div><span class="metric-icon">⌘</span><span><b>Learn by doing</b><small>Concepts + practice</small></span></div>
+      <div><span class="metric-icon">⌁</span><span><b>Your pace, your path</b><small>Start from the basics</small></span></div>
+      <div><span class="metric-icon">◇</span><span><b>Free-first mission</b><small>Learning should be accessible</small></span></div>
+    </section>
+
+    <section id="tutor" class="section tutor-section">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / MEET YOUR TUTOR</div><h2>Ask. Understand.<br><span class="gradient-text">Build confidence.</span></h2></div>
+        <p>This first prototype uses guided demo responses so you can test the learning experience. Live AI will be connected through a secure backend in the next build phase.</p>
+      </div>
+      <div class="tutor-layout">
+        <aside class="tutor-sidebar">
+          <div class="side-label">LEARNING CONSOLE</div>
+          <label for="language">Choose a path</label>
+          <select id="language">
+            <option value="Python">Python foundations</option>
+            <option value="JavaScript">JavaScript essentials</option>
+            <option value="HTML/CSS">HTML & CSS</option>
+            <option value="SQL">SQL & databases</option>
+            <option value="AI">AI & machine learning</option>
+          </select>
+          <label for="level">Your current level</label>
+          <select id="level">
+            <option value="Beginner">Beginner — start from zero</option>
+            <option value="Intermediate">Intermediate — know the basics</option>
+            <option value="Advanced">Advanced — go deeper</option>
+          </select>
+          <div class="sidebar-note"><span class="note-icon">✦</span><div><b>Learning tip</b><p>Ask “why?” as often as “how?”. Understanding makes skills stick.</p></div></div>
+          <div class="privacy-note"><span>◈</span> Demo mode · No account required</div>
+        </aside>
+        <div class="chat-panel">
+          <div class="chat-header"><div class="tutor-avatar">L<span>✦</span></div><div><b>LEO AI Tutor</b><small><span class="status-dot"></span> Learning demo online</small></div><button class="icon-button" id="clearChat" title="Reset conversation" aria-label="Reset conversation">↻</button></div>
+          <div id="chatMessages" class="chat-messages" aria-live="polite">
+            <div class="message tutor-message"><div class="message-avatar">L</div><div class="bubble"><span class="message-tag">LEO TUTOR</span><p>Hey, learner. 👋 I'm your programming study partner. Pick a learning path, then ask me to explain a concept or help you practice.</p><div class="suggestions"><button data-prompt="Explain variables with a simple example">Explain variables</button><button data-prompt="Give me a beginner coding challenge">Give me a challenge</button><button data-prompt="What is a function and why use it?">Teach me functions</button></div></div></div>
+          </div>
+          <div class="chat-footer">
+            <div class="prompt-hint">TRY: “Explain loops like I'm a beginner”</div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" maxlength="500" autocomplete="off" placeholder="Ask a programming question..." aria-label="Ask a programming question">
+              <button type="submit" aria-label="Send message"><span>↑</span></button>
+            </form>
+            <p class="demo-disclaimer">Prototype only: responses are sample guidance, not live AI output.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="paths" class="section paths-section">
+      <div class="section-heading">
+        <div><div class="eyebrow">02 / YOUR NEXT SKILL</div><h2>Choose a path.<br><span class="gradient-text">Make it real.</span></h2></div>
+        <p>Start with one foundation, then connect the dots. Each path will grow into lessons, practice, mini-projects, and progress tracking.</p>
+      </div>
+      <div class="path-grid">
+        <article class="path-card path-featured"><div class="path-top"><span class="path-symbol">{ }</span><span class="path-status">START HERE</span></div><h3>Python Foundations</h3><p>Learn the language behind automation, data, and AI — from your first print statement to useful projects.</p><div class="path-tags"><span>Beginner</span><span>8 modules planned</span></div><button class="path-link" data-path="Python">Explore path <span>↗</span></button><div class="card-watermark">Py</div></article>
+        <article class="path-card"><div class="path-top"><span class="path-symbol">⌘</span><span class="path-status">COMING NEXT</span></div><h3>Web Development</h3><p>Build responsive websites using HTML, CSS, JavaScript, and modern web fundamentals.</p><div class="path-tags"><span>Beginner</span><span>Project-based</span></div><button class="path-link" data-path="HTML/CSS">Explore path <span>↗</span></button><div class="card-watermark">&lt;/&gt;</div></article>
+        <article class="path-card"><div class="path-top"><span class="path-symbol">▤</span><span class="path-status">COMING NEXT</span></div><h3>SQL & Databases</h3><p>Understand how applications store, query, and organize information reliably.</p><div class="path-tags"><span>Beginner</span><span>Hands-on</span></div><button class="path-link" data-path="SQL">Explore path <span>↗</span></button><div class="card-watermark">DB</div></article>
+        <article class="path-card"><div class="path-top"><span class="path-symbol">✧</span><span class="path-status">ROADMAP</span></div><h3>AI & Machine Learning</h3><p>Build the foundations: data, models, evaluation, and responsible AI development.</p><div class="path-tags"><span>Foundations</span><span>Build as you learn</span></div><button class="path-link" data-path="AI">Explore path <span>↗</span></button><div class="card-watermark">AI</div></article>
+      </div>
+    </section>
+
+    <section id="how" class="section how-section">
+      <div class="eyebrow">03 / BUILT AROUND UNDERSTANDING</div>
+      <h2>Less memorizing.<br><span class="gradient-text">More becoming.</span></h2>
+      <div class="steps-grid">
+        <div class="step"><span>01</span><div class="step-icon">⌕</div><h3>Ask anything</h3><p>Start with a question, a topic, or a piece of code that doesn't make sense yet.</p></div>
+        <div class="step"><span>02</span><div class="step-icon">⌘</div><h3>Learn the logic</h3><p>Break big ideas into smaller explanations, examples, and practical steps.</p></div>
+        <div class="step"><span>03</span><div class="step-icon">↗</div><h3>Practice for real</h3><p>Turn knowledge into skill with challenges and projects you can show.</p></div>
+      </div>
+    </section>
+
+    <section class="closing-cta"><div class="closing-orb"></div><div class="eyebrow">THE FUTURE IS BUILT, NOT WAITED FOR</div><h2>Your next chapter<br>starts <span class="gradient-text">with one question.</span></h2><a class="button button-primary" href="#tutor">Meet your tutor <span>→</span></a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark"><span></span><span></span><span></span></span><span>LEO<span class="brand-accent">TECH</span><small>LEARN. BUILD. EVOLVE.</small></span></a><p>Built for curious minds. <span>© <span id="year"></span> LEO TECH · Prototype v0.1</span></p><a href="#top" class="back-top">Back to top ↑</a></footer>
+  <script src="./app.js"></script>
+</body>
+</html>
