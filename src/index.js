@@ -133,7 +133,7 @@ export default {
       } catch (error) {
         // Do not return provider internals or secrets to the browser.
         console.error("LEO tutor inference failed", error?.name || "UnknownError", error?.message || "No error message");
-        return json({ error: "The AI service is busy or unavailable. Please try again later." }, 503);
+        return json({ error: "AI inference failed.", diagnostic: String(error?.message || error).slice(0, 240) }, 503);
       }
     }
 
