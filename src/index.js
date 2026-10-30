@@ -1,4 +1,4 @@
-const MODEL = "@cf/meta/llama-3.1-8b-instruct";
+const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
 const MAX_MESSAGE_CHARS = 500;
 const MAX_HISTORY_TURNS = 8;
 
