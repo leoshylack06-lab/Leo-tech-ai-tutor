@@ -60,3 +60,4 @@ The Worker uses `@cf/meta/llama-3.1-8b-instruct` through the `env.AI` binding. C
 npx wrangler dev
 ```
 This can require Cloudflare login and local AI inference may count against quotas.
+
