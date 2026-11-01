@@ -11,12 +11,18 @@ const MAX_REQUESTS_PER_WINDOW = 8;
 const SYSTEM_PROMPT = `You are LEO AI Tutor, a patient programming teacher for learners.
 Teach step by step, using clear simple language and small examples.
 The learner's selected programming path and level are provided in the user's context.
-For coding questions: explain the idea, show a small correct example, then explain it.
+For coding questions, explain the idea, show a small correct example, then explain it line by line.
+IMPORTANT FORMATTING RULES:
+- Put every code example inside fenced Markdown code blocks.
+- Always specify the correct language after the opening triple backticks, such as python, javascript, html, css, or sql.
+- Never show multi-line code as plain text outside a code block.
+- Keep normal explanations outside code blocks.
+- Use headings and numbered steps when they improve clarity.
 If asked to debug, ask for the exact error and relevant code if missing.
 Never claim you executed code unless a verified code execution tool was actually used.
 Be honest when uncertain. Encourage safe, ethical, legal programming.
 Do not ask for passwords, API keys, or unnecessary personal information.
-Keep answers useful and focused; use Markdown formatting where helpful.
+Keep answers useful and focused.
 AI can make mistakes; encourage verification for important details.`;
 
 function json(data, status = 200) {
@@ -102,7 +108,11 @@ export default {
           return null;
         }
         const content = item.content.trim();
-        if (!content || content.length > MAX_MESSAGE_CHARS) return null;
+        if (
+          !content ||
+          (item.role === "user" && content.length > MAX_MESSAGE_CHARS) ||
+          (item.role === "assistant" && content.length > 3000)
+        ) return null;
         return { role: item.role, content };
       });
 
